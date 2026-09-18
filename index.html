@@ -3,329 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>FitCalc – Free Health & Fitness Calculators</title>
-  <meta name="description" content="Free online health and fitness calculators. Calculate BMI, BMR, calories, body fat, ideal weight, water intake, and more. Instant results, no signup needed.">
-  <meta name="keywords" content="BMI calculator, calorie calculator, body fat calculator, fitness calculator, health tools, BMR calculator">
-
-  <meta property="og:title" content="FitCalc – Free Health & Fitness Calculators">
-  <meta property="og:description" content="Free online health and fitness calculators. Calculate BMI, BMR, calories, body fat, ideal weight, water intake, and more. Instant results, no signup needed.">
+  <meta name="description" content="FitCalc — fast, free health and fitness calculators.">
+  <meta property="og:title" content="FitCalc — Health tools that actually work">
+  <meta property="og:description" content="Fast health and fitness calculators. No signup. No nonsense.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fitcalcby.netlify.app/">
   <meta property="og:image" content="https://fitcalcby.netlify.app/og-image.png">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FitCalc – Free Health & Fitness Calculators">
-  <meta name="twitter:description" content="Free online health and fitness calculators. Calculate BMI, BMR, calories, body fat, ideal weight, water intake, and more. Instant results, no signup needed.">
+  <title>FitCalc // Health tools that actually work</title>
 
-  <meta name="google-site-verification" content="ASB9G1Nt-ZJLLTEAFn55hjz70Gl8-c1FU0StVgVYwk4">
-  <meta name="google-adsense-account" content="ca-pub-2124116314378550">
-
-  <link rel="canonical" href="https://fitcalcby.netlify.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 
+  <!-- Keep your existing AdSense account. -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2124116314378550" crossorigin="anonymous"></script>
-  <script src="menu.js" defer></script>
 </head>
 
 <body>
-  <div class="page-glow page-glow-a"></div>
-  <div class="page-glow page-glow-b"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <nav class="nav-shell" aria-label="Primary navigation">
-      <a href="/" class="brand" aria-label="FitCalc home">
-        <span class="brand-mark" aria-hidden="true"><span></span></span>
-        <span>FitCalc</span>
-      </a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="FitCalc home">
+      <span class="brand-mark">+</span>
+      <span class="brand-name">fitcalc</span>
+      <span class="brand-cursor">_</span>
+    </a>
 
-      <div class="nav-links">
-        <a class="active" href="/">Home</a>
-        <a href="/bmi">BMI</a>
-        <a href="/calories">Calories</a>
-        <a href="/bodyfat">Body Fat</a>
-        <a href="/bmr">BMR</a>
-        <a href="/water">Water</a>
-        <a href="/protein">Protein</a>
-        <a href="/sleep">Sleep</a>
-      </div>
-
-      <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="active" href="/">home</a>
+      <a href="/bmi">bmi</a>
+      <a href="/calories">calories</a>
+      <a href="/bodyfat">bodyfat</a>
+      <a href="/bmr">bmr</a>
+      <a href="/water">water</a>
     </nav>
 
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="/">Home</a>
-      <a href="/bmi">⚖️ BMI Calculator</a>
-      <a href="/calories">🔥 Calorie Calculator</a>
-      <a href="/bodyfat">📏 Body Fat Calculator</a>
-      <a href="/bmr">⚡ BMR Calculator</a>
-      <a href="/water">💧 Water Intake</a>
-      <a href="/protein">🥩 Protein Calculator</a>
-      <a href="/maxhr">❤️ Max Heart Rate</a>
-      <a href="/idealweight">🎯 Ideal Weight</a>
-      <a href="/macro">🥗 Macro Calculator</a>
-      <a href="/sleep">😴 Sleep Calculator</a>
-      <a href="/steptocalories">👟 Steps to Calories</a>
-      <a href="/exercisecalories">🏃 Exercise Calories</a>
-      <a href="/resttimer">⏱️ Rest Timer</a>
-      <a href="/about">ℹ️ About</a>
-      <a href="/contact">✉️ Contact</a>
-    </div>
+    <button class="menu-toggle" id="hamburger-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/">home</a>
+    <a href="/bmi">bmi</a>
+    <a href="/calories">calories</a>
+    <a href="/bodyfat">bodyfat</a>
+    <a href="/bmr">bmr</a>
+    <a href="/water">water</a>
+    <a href="/protein">protein</a>
+    <a href="/macro">macros</a>
+  </div>
+
   <main>
-    <section class="hero">
-      <div class="hero-grid"></div>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> SYSTEM ONLINE <span class="slash">/</span> 100% FREE</div>
 
-      <div class="hero-inner">
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          100% Free
-          <span class="eyebrow-separator"></span>
-          No signup
-        </div>
+        <h1>Health tools<br><span>that actually work.</span></h1>
 
-        <h1>Health tools that <em>actually</em> work.</h1>
-
-        <p class="hero-copy">
-          Instant, accurate health and fitness calculators.
-          No ads on results, no email required, no nonsense.
+        <p class="hero-text">
+          Fast, practical calculators for the numbers that matter.
+          No account. No clutter. No mysterious fitness math.
         </p>
 
         <div class="hero-actions">
-          <a href="#calculators" class="primary-button">
-            Explore calculators
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <a class="primary-btn" href="#calculators">
+            <span>explore calculators</span>
+            <span class="btn-arrow">↘</span>
           </a>
-          <span class="hero-note"><span class="mini-pulse"></span> Results in seconds</span>
+          <span class="micro-copy">13+ tools · instant results</span>
         </div>
+      </div>
 
-        <div class="hero-stats">
-          <div class="stat">
-            <strong>13+</strong>
-            <span>Free tools</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <strong>Instant</strong>
-            <span>Results</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <strong>Zero</strong>
-            <span>Signup needed</span>
-          </div>
+      <div class="hero-terminal" aria-label="FitCalc system status">
+        <div class="terminal-head">
+          <span><i></i><i></i><i></i></span>
+          <span class="terminal-title">fitcalc@web ~ status</span>
+          <span class="terminal-code">01</span>
+        </div>
+        <div class="terminal-body">
+          <p><b>root@fitcalc</b>:~$ ./health_check</p>
+          <p class="terminal-muted">loading calculation modules...</p>
+          <div class="progress"><span></span></div>
+          <p><span class="green">[ OK ]</span> bmi / bmr / calories</p>
+          <p><span class="green">[ OK ]</span> bodyfat / macros / water</p>
+          <p><span class="green">[ OK ]</span> sleep / heart-rate / protein</p>
+          <p><span class="purple">[ OK ]</span> exercise / steps / recovery</p>
+          <p class="prompt"><b>root@fitcalc</b>:~$ <span class="cursor"></span></p>
         </div>
       </div>
     </section>
 
-    <section class="calculator-section" id="calculators">
+    <section class="ticker" aria-label="FitCalc features">
+      <div class="ticker-inner">
+        <span>01 / INSTANT RESULTS</span><b>✦</b>
+        <span>02 / NO SIGNUP</span><b>✦</b>
+        <span>03 / FREE TO USE</span><b>✦</b>
+        <span>04 / BUILT FOR REAL PEOPLE</span><b>✦</b>
+        <span>05 / NO NONSENSE</span>
+      </div>
+    </section>
+
+    <section class="stats shell">
+      <div class="stat">
+        <strong>13<span>+</span></strong>
+        <small>FREE TOOLS</small>
+      </div>
+      <div class="stat">
+        <strong>01<span>s</span></strong>
+        <small>RESULT SPEED</small>
+      </div>
+      <div class="stat">
+        <strong>0<span>×</span></strong>
+        <small>SIGNUP REQUIRED</small>
+      </div>
+      <div class="stat">
+        <strong>24<span>/7</span></strong>
+        <small>AVAILABLE</small>
+      </div>
+    </section>
+
+    <section class="calculator-section shell" id="calculators">
       <div class="section-heading">
         <div>
-          <div class="section-kicker">/ tools</div>
-          <h2>All calculators</h2>
+          <span class="section-kicker">// CALCULATION_MODULES</span>
+          <h2>Pick a tool.</h2>
         </div>
-        <p>Pick a tool. Enter your numbers. Get the result.</p>
-      </div>
-
-      <div class="ad-slot">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-2124116314378550"
-          data-ad-slot="auto"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <p>Choose a calculator and get straight to the useful part.</p>
       </div>
 
       <div class="tools-grid">
-        <a href="/bmi" class="tool-card featured">
-          <div class="card-top">
-            <span class="tool-index">01</span>
-            <span class="tool-icon">⚖️</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card featured" href="/bmi">
+          <span class="tool-number">01</span>
+          <span class="tool-icon">⚖</span>
+          <div class="tool-content">
             <h3>BMI Calculator</h3>
-            <p>Calculate your Body Mass Index and find out if your weight is in a healthy range for your height.</p>
+            <p>Calculate your Body Mass Index from height and weight.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/calories" class="tool-card featured">
-          <div class="card-top">
-            <span class="tool-index">02</span>
-            <span class="tool-icon">🔥</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card featured" href="/calories">
+          <span class="tool-number">02</span>
+          <span class="tool-icon">◉</span>
+          <div class="tool-content">
             <h3>Calorie Calculator</h3>
-            <p>Find out how many calories you need daily to lose weight, maintain, or gain muscle based on your activity level.</p>
+            <p>Estimate your daily calorie needs based on activity and goals.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/bodyfat" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">03</span>
-            <span class="tool-icon">📏</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/bodyfat">
+          <span class="tool-number">03</span>
+          <span class="tool-icon">⌁</span>
+          <div class="tool-content">
             <h3>Body Fat Calculator</h3>
-            <p>Estimate your body fat percentage using the US Navy method — just a few measurements needed.</p>
+            <p>Estimate body fat percentage using practical measurements.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/idealweight" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">04</span>
-            <span class="tool-icon">🎯</span>
+        <a class="tool-card" href="/idealweight">
+          <span class="tool-number">04</span>
+          <span class="tool-icon">◇</span>
+          <div class="tool-content">
+            <h3>Ideal Weight</h3>
+            <p>Find an estimated ideal body-weight range from your height.</p>
           </div>
-          <div class="card-content">
-            <h3>Ideal Weight Calculator</h3>
-            <p>Find your ideal body weight range based on your height and gender using multiple proven formulas.</p>
-          </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/water" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">05</span>
-            <span class="tool-icon">💧</span>
+        <a class="tool-card" href="/water">
+          <span class="tool-number">05</span>
+          <span class="tool-icon">≈</span>
+          <div class="tool-content">
+            <h3>Water Intake</h3>
+            <p>Estimate how much water you may need throughout the day.</p>
           </div>
-          <div class="card-content">
-            <h3>Water Intake Calculator</h3>
-            <p>Calculate exactly how much water you should drink each day based on your weight and activity level.</p>
-          </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/bmr" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">06</span>
-            <span class="tool-icon">⚡</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/bmr">
+          <span class="tool-number">06</span>
+          <span class="tool-icon">ϟ</span>
+          <div class="tool-content">
             <h3>BMR Calculator</h3>
-            <p>Calculate your Basal Metabolic Rate — the number of calories your body burns at complete rest.</p>
+            <p>Calculate the calories your body burns at complete rest.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/maxhr" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">07</span>
-            <span class="tool-icon">❤️</span>
+        <a class="tool-card" href="/maxhr">
+          <span class="tool-number">07</span>
+          <span class="tool-icon">♡</span>
+          <div class="tool-content">
+            <h3>Max Heart Rate</h3>
+            <p>Estimate maximum heart rate and useful training zones.</p>
           </div>
-          <div class="card-content">
-            <h3>Max Heart Rate Calculator</h3>
-            <p>Find your maximum and target heart rate zones for fat burn, cardio, and peak performance training.</p>
-          </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/protein" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">08</span>
-            <span class="tool-icon">🥩</span>
+        <a class="tool-card" href="/protein">
+          <span class="tool-number">08</span>
+          <span class="tool-icon">+</span>
+          <div class="tool-content">
+            <h3>Protein Intake</h3>
+            <p>Estimate a daily protein target based on your body and activity.</p>
           </div>
-          <div class="card-content">
-            <h3>Protein Intake Calculator</h3>
-            <p>Calculate your daily protein requirement for muscle building, weight loss, or general health maintenance.</p>
-          </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/steptocalories" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">09</span>
-            <span class="tool-icon">👟</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/steptocalories">
+          <span class="tool-number">09</span>
+          <span class="tool-icon">»</span>
+          <div class="tool-content">
             <h3>Steps to Calories</h3>
-            <p>Convert your daily step count into calories burned. See your distance and active time too.</p>
+            <p>Estimate calories burned from your daily step count.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/exercisecalories" class="tool-card featured">
-          <div class="card-top">
-            <span class="tool-index">10</span>
-            <span class="tool-icon">🏃</span>
+        <a class="tool-card" href="/exercisecalories">
+          <span class="tool-number">10</span>
+          <span class="tool-icon">↯</span>
+          <div class="tool-content">
+            <h3>Exercise Calories</h3>
+            <p>Estimate energy burned during common workouts and activities.</p>
           </div>
-          <div class="card-content">
-            <h3>Calories Burned by Exercise</h3>
-            <p>Find out how many calories you burn doing 15+ exercises — running, cycling, swimming, and more.</p>
-          </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/macro" class="tool-card featured">
-          <div class="card-top">
-            <span class="tool-index">11</span>
-            <span class="tool-icon">🥗</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/macro">
+          <span class="tool-number">11</span>
+          <span class="tool-icon">△</span>
+          <div class="tool-content">
             <h3>Macro Calculator</h3>
-            <p>Get your ideal daily carbs, protein, and fat split based on your calorie goal and fitness plan.</p>
+            <p>Set calorie and macronutrient targets around your goal.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/sleep" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">12</span>
-            <span class="tool-icon">😴</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/sleep">
+          <span class="tool-number">12</span>
+          <span class="tool-icon">z</span>
+          <div class="tool-content">
             <h3>Sleep Calculator</h3>
-            <p>Find the best bedtime or wake-up time to complete full sleep cycles and wake up refreshed.</p>
+            <p>Plan sleep and wake times around practical sleep cycles.</p>
           </div>
-          <span class="tool-link">Calculate now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
 
-        <a href="/resttimer" class="tool-card">
-          <div class="card-top">
-            <span class="tool-index">13</span>
-            <span class="tool-icon">⏱️</span>
-          </div>
-          <div class="card-content">
+        <a class="tool-card" href="/resttimer">
+          <span class="tool-number">13</span>
+          <span class="tool-icon">◷</span>
+          <div class="tool-content">
             <h3>Workout Rest Timer</h3>
-            <p>Set a rest timer between your gym sets with a beep alert. Presets for every training style.</p>
+            <p>Keep your recovery periods consistent between sets.</p>
           </div>
-          <span class="tool-link">Use timer <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tool-go">↗</span>
         </a>
       </div>
+    </section>
 
-      <div class="ad-slot ad-slot-bottom">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-2124116314378550"
-          data-ad-slot="auto"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <section class="lower-panel shell">
+      <div class="panel-terminal">
+        <span class="section-kicker">// WHY_FITCALC</span>
+        <h2>Useful numbers.<br><span>Zero ceremony.</span></h2>
       </div>
+      <div class="panel-points">
+        <div><span>01</span><p>Enter your numbers.</p></div>
+        <div><span>02</span><p>Get the calculation instantly.</p></div>
+        <div><span>03</span><p>Use the result. Keep moving.</p></div>
+      </div>
+    </section>
+
+    <section class="ad-area shell" aria-label="Advertisement">
+      <div class="ad-label">ADVERTISEMENT</div>
+      <div class="ad-placeholder"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="/" class="footer-brand"><span class="brand-mark"><span></span></span> FitCalc</a>
-      <div class="footer-links">
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/">Home</a>
-      </div>
-      <p class="copyright">© 2026 FitCalc</p>
-      <p class="disclaimer">All calculators are for informational purposes only. Consult a healthcare professional for medical advice.</p>
+  <footer class="footer shell">
+    <div class="footer-brand">
+      <span class="brand-mark">+</span>
+      <strong>fitcalc</strong>
     </div>
+    <div class="footer-links">
+      <a href="/about">about</a>
+      <a href="/contact">contact</a>
+      <a href="/privacy">privacy</a>
+      <a href="/">home</a>
+    </div>
+    <p>© 2026 FitCalc · All calculators are for informational purposes only. Consult a healthcare professional for medical advice.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
