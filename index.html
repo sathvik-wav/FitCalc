@@ -1,52 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" 
-        content="width=device-width, initial-scale=1.0">
-        <title>FitCalc - Fitness Buddy</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div class="container">
-        <div class="form">
-            <h1>FitCalc</h1>
-            <p class="tagline">Your Fitness Buddy</p>
-            <input type="number" placeholder="Age" id="age"> 
-            <input type="number" placeholder="Weight (kg)" id="weight">
-            <input type="number" placeholder="Height (cm)" id="height">
-            <select id="gender">
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <select id="activity">
-                <option value="">Activity Level</option>
-                <option value="1.2">Sedentary</option>
-                <option value="1.375">Lightly Active</option>
-                <option value="1.55">Moderate</option>
-                <option value="1.725">Very Active</option>
-            </select>
-            <select id="goal">
-                <option value="">Goal</option>
-                <option value="maintain">Maintain</option>
-                <option value="cut">Cut</option>
-                <option value="bulk">Bulk</option>
-            </select>
-            <button type="button">Submit</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitCalc</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">FIT<span>CALC</span></a>
+
+        <div class="nav-links">
+            <a href="#calculator">Calculator</a>
+            <a href="#results">Results</a>
+            <a href="#plans">Plans</a>
         </div>
-        </div>
-        <div id="result"></div>
-        <div id="planResult"></div>
-        <footer>
-            <p class="built">Built by WavForge</p>
-            <p class="copyright">© 2026 FitCalc</p>
-            <div class="socials">
-                <a href="https://www.youtube.com/@redriffx" target="_blank"><img src="assets/youtube.svg" class="icon"></a>
-                <a href="https://www.instagram.com/sathvik.0" target="_blank"><img src="assets/instagram.svg" class="icon"></a>
-                <a href="https://github.com/sathvik-wav" target="_blank"><img src="assets/github.svg" class="icon"></a>
+
+        <a href="https://github.com/sathvik-wav/FitCalc"
+           target="_blank"
+           class="github-btn">
+            GitHub ↗
+        </a>
+    </nav>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-glow"></div>
+
+            <p class="eyebrow">FITNESS / CALCULATION / 01</p>
+
+            <h1>
+                YOUR BODY.<br>
+                <span>CALCULATED.</span>
+            </h1>
+
+            <p class="hero-text">
+                Calculate your calories, macros and nutrition plan
+                based on your body and your goals.
+            </p>
+
+            <a href="#calculator" class="hero-button">
+                Start calculating
+                <span>↓</span>
+            </a>
+
+        </section>
+
+
+        <!-- CALCULATOR -->
+
+        <section class="calculator-section" id="calculator">
+
+            <div class="section-heading">
+                <span>01</span>
+                <div>
+                    <p>INPUT</p>
+                    <h2>Your stats</h2>
+                </div>
             </div>
-        </footer>
-       <script src="script.js"></script>
-    </body>
+
+
+            <div class="calculator-card">
+
+                <div class="card-top">
+                    <div>
+                        <p class="card-label">FITCALC / PERSONAL DATA</p>
+                        <h3>Tell us about yourself.</h3>
+                    </div>
+
+                    <div class="status">
+                        <span></span>
+                        READY
+                    </div>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <input
+                            type="number"
+                            id="age"
+                            placeholder="21"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="weight">Weight</label>
+                        <div class="input-wrap">
+                            <input
+                                type="number"
+                                id="weight"
+                                placeholder="70"
+                            >
+                            <span>KG</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="height">Height</label>
+                        <div class="input-wrap">
+                            <input
+                                type="number"
+                                id="height"
+                                placeholder="180"
+                            >
+                            <span>CM</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="activity">Activity level</label>
+                        <select id="activity">
+                            <option value="">Select</option>
+                            <option value="1.2">Sedentary</option>
+                            <option value="1.375">Lightly Active</option>
+                            <option value="1.55">Moderate</option>
+                            <option value="1.725">Very Active</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="goal">Goal</label>
+                        <select id="goal">
+                            <option value="">Select</option>
+                            <option value="maintain">Maintain</option>
+                            <option value="cut">Cut</option>
+                            <option value="bulk">Bulk</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- KEEP THIS AS THE FIRST BUTTON -->
+                <button type="button" class="calculate-btn">
+                    <span>Calculate my numbers</span>
+                    <span class="arrow">↗</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section class="results-section" id="results">
+
+            <div class="section-heading">
+                <span>02</span>
+                <div>
+                    <p>OUTPUT</p>
+                    <h2>Your numbers</h2>
+                </div>
+            </div>
+
+            <div id="result"></div>
+
+        </section>
+
+
+        <!-- PLANS -->
+
+        <section class="plans-section" id="plans">
+
+            <div class="section-heading">
+                <span>03</span>
+                <div>
+                    <p>NUTRITION</p>
+                    <h2>Your plan</h2>
+                </div>
+            </div>
+
+            <div id="planResult"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-main">
+            <div>
+                <div class="footer-logo">
+                    FIT<span>CALC</span>
+                </div>
+
+                <p>
+                    Built for people who actually<br>
+                    want to understand their numbers.
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p>BUILT BY WAVFORGE</p>
+                <p>© 2026 FITCALC</p>
+
+                <div class="socials">
+                    <a href="https://www.youtube.com/@redriffx" target="_blank">
+                        YouTube
+                    </a>
+
+                    <a href="https://www.instagram.com/sathvik.0" target="_blank">
+                        Instagram
+                    </a>
+
+                    <a href="https://github.com/sathvik-wav" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
 </html>
