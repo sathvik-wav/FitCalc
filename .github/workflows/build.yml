@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: macos-13
+          - os: macos-15-intel
             build: --mac dmg zip --publish never
           - os: windows-latest
             build: --win nsis --publish never
