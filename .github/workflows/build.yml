@@ -14,11 +14,11 @@ jobs:
       matrix:
         include:
           - os: macos-13
-            build: --mac dmg zip
+            build: --mac dmg zip --publish never
           - os: windows-latest
-            build: --win nsis
+            build: --win nsis --publish never
           - os: ubuntu-latest
-            build: --linux AppImage
+            build: --linux AppImage --publish never
 
     steps:
       - name: Checkout
