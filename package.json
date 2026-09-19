@@ -1,6 +1,6 @@
 {
   "name": "fitcalc",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "FitCalc - Fitness tools, Made simple",
   "main": "main.js",
   "scripts": {
