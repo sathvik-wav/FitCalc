@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build on ${{ matrix.os }}
@@ -36,8 +39,28 @@ jobs:
       - name: Build FitCalc
         run: npx electron-builder ${{ matrix.build }}
 
-      - name: Upload artifacts
+      - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           name: FitCalc-${{ matrix.os }}
           path: dist/*
+
+  release:
+    name: Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all builds
+        uses: actions/download-artifact@v4
+        with:
+          path: release-files
+          merge-multiple: true
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: FitCalc ${{ github.ref_name }}
+          generate_release_notes: true
+          files: release-files/*
